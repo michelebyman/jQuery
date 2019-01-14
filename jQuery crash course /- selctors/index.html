@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>jQuery crash course | Selctors</title>
+
+
+    <style>
+
+      body {
+        font-size: 17px;
+        font-family: arial;
+        background: teal;
+        line-height: 1.5em;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+        margin-botto: 20px;
+      }
+
+      #container {
+        witdth: 90%;
+        margin: auto;
+        padding: 10;
+      }
+
+    </style>
+
+
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1 id="heading1">Heading One</h1>
+        <p id="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<span>Excepteur sint occaecat cupidatat non proident</span> , sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h1 class="heading2">Heading two</h1>
+        <p class="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<span>Excepteur sint occaecat cupidatat non proident</span> , sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+        <span>Excepteur sint occaecat cupidatat non proident</span>
+
+        <ul id="list">
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+        </ul>
+
+        <input type="button" name="" value="Button 1">
+        <input type="submit" name="" value="Submit">
+        <input type="text">
+
+        <a href="http://www.google.com">Google</a>
+        <a href="http://www.yahoo.com">Yahoo</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      // Selects all the h1:ones
+      // $("h1").hide();
+      // Selects only the one with this id
+      // $("h1#heading1").hide();
+      // Selects all with this class
+      // $("h1.heading2").hide();
+      // Selects all classes with this name
+      // $(".heading2").hide();
+      // Takes all spans inside paragraphs and add css to it
+      // $("p span").css("color", "red");
+      // writes over all spans with a new css
+      // $("span").css("color", "pink");
+
+      $("ul#list li:first").css("color", "red");
+      $("ul#list li:last").css("color", "red");
+      $("ul#list li:even").css("background-color", "yellow");
+      $("ul#list li:odd").css("background-color", "#cccccc");
+
+      $("ul#list li:nth-child(3n)").css("list-style", "none");
+
+      // $(":button").hide();
+      // $(":text").hide();
+      // $(":submit").hide();
+
+      $("[href]").css("color", "pink");
+      $("a[href='http://www.yahoo.com']").css("color", "green");
+      // Hide evrything on the page
+      // $("*").hide();
+
+
+
+    </script>
+
+  </body>
+</html>

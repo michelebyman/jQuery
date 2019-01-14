@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery crash course | Events</title>
+
+    <style>
+
+      body {
+        font-size: 17px;
+        font-family: arial;
+        background: teal;
+        line-height: 1.5em;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+        margin-botto: 20px;
+      }
+
+      #container {
+        witdth: 90%;
+        margin: auto;
+        padding: 10;
+      }
+
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <header>
+      <h1>jQuery Crash Course | Events</h1>
+    </header>
+
+    <div id="container">
+      <h2>Mouse Events</h2>
+      <button id="btn1" class="btnClass">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <p class="para1">jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+      <h1 id="coords"></h1>
+      <hr>
+      <form id="form">
+          <label>Name</label>
+          <input type="text" id="name">
+          <br>
+          <label>Email</label>
+          <input type="email" id="email">
+          <br>
+          <label>Gender</label>
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <br>
+          <input type="submit" value="Submit">
+      </form>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+          // /*$("#btn1").click(function(){
+          //   alert("Button Clicked!");
+          // });
+          // // same but faster in loading
+          // $("#btn1").on('click', function() {
+          //   alert("Button Clicked!");
+          // })*/
+          // $("#btn1").on('click', function() {
+          //   // $(".para1").hide(); // can do it with toggle
+          //       $(".para1").toggle();
+          // })
+          // $("#btn2").on('click', function() {
+          //   // $(".para1").show();
+          // })
+          // Dubble click
+          // $("#btn1").dblclick(function() {
+          //   $(".para1").toggle();
+          // });
+          //Short hand of two events
+          // $("#btn1").hover(function() {
+          //   $(".para1").toggle();
+          // });
+
+          // //same as above
+          // $("#btn1").on("mouseenter",function() {
+          //   $(".para1").toggle();
+          // });
+          // $("#btn1").on("mouseleave",function() {
+          //   $(".para1").toggle();
+          // });
+
+          // $("#btn1").on("mousemove",function() {
+          //   $(".para1").toggle();
+          // });
+
+
+          // $("#btn1").on("mousedown",function() {
+          //   $(".para1").toggle();
+          // });
+          // $("#btn1").on("mouseup",function() {
+          //   $(".para1").toggle();
+          // });
+
+          // $("#btn1").click(function(e){
+          //   // alert(e.currentTarget.id);
+          //   // alert(e.currentTarget.innerHTML);
+          //   // alert(e.currentTarget.outerHTML);
+          //   alert(e.currentTarget.className);
+          // });
+          // types the cordinations on the page.
+          // $(document).on("mousemove", function(e){
+          //     $("#coords").html("Coords: Y: " + e.clientY + " X: " + e.clientX);
+          // });
+
+          // $("#btn1").on("mousemove",function() {
+          //   $(".para1").toggle();
+          // });
+
+          // // DOM input field change backgound
+          // $("input").focus(function() {
+          //   // alert("focus");
+          //   $(this).css("background", "pink");
+          // });
+          //
+          // $("input").blur(function() {
+          //   // alert("focus");
+          //   $(this).css("background", "white");
+          // });
+          // // DOM, get the value someone is typing in to the input field
+          // $("input").keyup(function(e) {
+          //   console.log(e.target.value);
+          // });
+
+          // alerts the value of the select option
+          $("select#gender").change(function functionName(e) {
+            alert(e.target.value);
+          });
+
+          //
+          $("#form").submit(function(e) {
+            //dose not reload the page
+            e.preventDefault();
+            // saves the value from the input to a variable then log it
+            var name = $("input#name").val();
+            var email = $("input#email").val();
+            console.log(name + " " + email);
+          })
+
+
+
+      });
+
+
+
+    </script>
+  </body>
+</html>
